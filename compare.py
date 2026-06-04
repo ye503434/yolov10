@@ -5,7 +5,7 @@ from ultralytics import YOLO, YOLOv10
 
 os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "max_split_size_mb:128"
 
-def profile_model(model_path, is_v10=False, dataset_path='coco/images/val2017', runs=100):
+def profile_model(model_path, is_v10=False, dataset_path='coco/images/val2017'):
     if is_v10:
         model = YOLOv10(model_path)
     else:
