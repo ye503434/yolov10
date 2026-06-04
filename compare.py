@@ -51,14 +51,14 @@ test_image = 'coco/images/val2017'
 
 v8_inf, v8_post, v8_pure_latency,v8_pure_fps = profile_model(v8_model_name, is_v10=False, dataset_path=test_image)
 v10_inf, v10_post, v10_pure_latency,v10_pure_fps = profile_model(v10_model_name, is_v10=True, dataset_path=test_image)
-print("="*62)
+
 print(f"{'評測性能指標':<25}{'YOLOv8m (傳統 NMS)':<22}{'YOLOv10m (NMS-Free)':<22}")
 print("-"*65)
 print(f"{'網路推論時間 (Inference)':<25}{v8_inf:<22.2f} ms{v10_inf:<22.2f} ms")
 print(f"{'後處理時間 (Postprocess)':<25}{v8_post:<22.2f} ms{v10_post:<22.2f} ms")
 print(f"{'純總延遲 (Pure Latency)':<25}{v8_pure_latency:<22.2f} ms{v10_pure_latency:<22.2f} ms")
 print(f"{'純每秒影格數 (Pure FPS)':<25}{v8_pure_fps:<22.2f}{v10_pure_fps:<22.2f}")
-print("="*62)
+
 models = ['YOLOv8m (with NMS)','YOLOv10m (NMS-Free)']
 fps_values = [v8_pure_fps, v10_pure_fps]
 latency_values = [v8_pure_latency, v10_pure_latency]
